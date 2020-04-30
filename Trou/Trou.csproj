@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>NaolShow</Authors>
+    <Company>ToWolf</Company>
+    <PackageProjectUrl>https://github.com/NaolShow/Trou</PackageProjectUrl>
+    <PackageLicenseFile>README.md</PackageLicenseFile>
+    <Copyright>© 2020 NaolShow, ToWolf</Copyright>
+    <PackageIconUrl>https://github.com/NaolShow/Trou/blob/master/logo.png?raw=true</PackageIconUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/NaolShow/Trou</RepositoryUrl>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageTags>Tor,Privoxy,HTTP,Socks,Socks5</PackageTags>
+    <Description>Tor + Privoxy for the best anonymous HTTP proxy implementation on C#</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Loan\Dropbox\Developpement\CSharp\--Network\Trou\Trou\Trou.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="../logo.png" Pack="true" PackagePath="\"/>
+
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

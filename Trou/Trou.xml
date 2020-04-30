@@ -1,0 +1,582 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Trou</name>
+    </assembly>
+    <members>
+        <member name="T:Trou.ServicesSettings.PrivoxyProxySettings">
+            <summary>
+            Allows to configure a <see cref="T:Trou.Services.PrivoxyProxy"/>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.PrivoxyBundlePath">
+            <summary>
+            Path to the extracted Privoxy Bundle folder (folder that contains the privoxy.exe file). This is the fastest way of configuring <see cref="T:Trou.Services.PrivoxyProxy"/> paths.<br/>
+            For a more advanced paths configuration, you can set every <see cref="T:Trou.Services.PrivoxyProxy"/> paths manually (if those paths are set, they will not be recovered from <see cref="P:Trou.ServicesSettings.PrivoxyProxySettings.PrivoxyBundlePath"/> path):<br/>
+            <see cref="P:Trou.ServicesSettings.PrivoxyProxySettings.PrivoxyFile"/>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.PrivoxyFile">
+            <summary>
+            Path to the privoxy.exe file<br/>
+            If this value isn't set, <see cref="T:Trou.Services.TorProxy"/> will try to recover it using <see cref="P:Trou.ServicesSettings.PrivoxyProxySettings.PrivoxyFile"/><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.PrivoxyProxySettings.Arguments">
+            <summary>
+            Arguments that are used when starting the <see cref="T:Trou.Services.PrivoxyProxy"/> process<br/>
+            Useful when you want to add arguments that are not natively supported by Trou<br/>
+            -> <see href="https://www.privoxy.org/user-manual/startup.html#CMDOPTIONS">List of the supported Privoxy arguments here</see>
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.PrivoxyProxySettings.Configuration">
+            <summary>
+            Configuration pairs that are used when starting the <see cref="T:Trou.Services.TorProxy"/> process<br/>
+            Useful when you want to add configuration pairs that are not natively supported by Trou<br/>
+            -> <see href="https://www.privoxy.org/user-manual/config.html">List of the supported Tor arguments here</see>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.ListeningAddress">
+            <summary>
+            Address that the <see cref="T:Trou.Services.PrivoxyProxy"/> is listening at (HTTP)<br/>
+            -> <see href="https://www.privoxy.org/user-manual/config.html#LISTEN-ADDRESS">Documentation here</see><br/>
+            (Default: 127.0.0.1)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.ListeningPort">
+            <summary>
+            Port that the <see cref="T:Trou.Services.PrivoxyProxy"/> is listening at (HTTP)<br/>
+            -> <see href="https://www.privoxy.org/user-manual/config.html#LISTEN-ADDRESS">Documentation here</see><br/>
+            (Default: 8118)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.ForwardAddress">
+            <summary>
+            Address that the <see cref="T:Trou.Services.PrivoxyProxy"/> will forward requests to (SOCKS 5)<br/>
+            -> <see href="https://www.privoxy.org/user-manual/config.html#SOCKS">Documentation here</see><br/>
+            (Default: 127.0.0.1)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.PrivoxyProxySettings.ForwardPort">
+            <summary>
+            Port that the <see cref="T:Trou.Services.PrivoxyProxy"/> will forward requests to (SOCKS 5)<br/>
+            -> <see href="https://www.privoxy.org/user-manual/config.html#SOCKS">Documentation here</see><br/>
+            (Default: 9050)
+            </summary>
+        </member>
+        <member name="T:Trou.ServicesSettings.TorControllerSettings">
+            <summary>
+            Allows to configure a <see cref="T:Trou.Services.TorController"/>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorControllerSettings.TorAddress">
+            <summary>
+            Address that the <see cref="T:Trou.Services.TorController"/> will connect to<br/>
+            (Default: 127.0.0.1)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorControllerSettings.TorPort">
+            <summary>
+            Port that the <see cref="T:Trou.Services.TorController"/> will connect to<br/>
+            (Default: 9051)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorControllerSettings.ControlPassword">
+            <summary>
+            Password that the <see cref="T:Trou.Services.TorController"/> will use to authenticate to the <see cref="T:Trou.Services.TorProxy"/><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="T:Trou.ServicesSettings.TorProxySettings">
+            <summary>
+            Allows to configure a <see cref="T:Trou.Services.TorProxy"/>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.TorBundlePath">
+            <summary>
+            Path to the extracted Tor Bundle folder (folder that contains the Tor and Data folders). This is the fastest way of configuring <see cref="T:Trou.Services.TorProxy"/> paths<br/>
+            For a more advanced paths configuration, you can set every <see cref="T:Trou.Services.TorProxy"/> paths manually (if those paths are set, they will not be recovered from <see cref="P:Trou.ServicesSettings.TorProxySettings.TorBundlePath"/> path):<br/>
+            <see cref="P:Trou.ServicesSettings.TorProxySettings.TorFile"/>, <see cref="P:Trou.ServicesSettings.TorProxySettings.CachePath"/>, <see cref="P:Trou.ServicesSettings.TorProxySettings.GeoIPFile"/>, <see cref="P:Trou.ServicesSettings.TorProxySettings.GeoIPv6File"/>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.TorFile">
+            <summary>
+            Path to the tor.exe file<br/>
+            If this value isn't set, <see cref="T:Trou.Services.TorProxy"/> will try to recover it using <see cref="P:Trou.ServicesSettings.TorProxySettings.TorBundlePath"/><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.CachePath">
+            <summary>
+            Path where the <see cref="T:Trou.Services.TorProxy"/> cache will be stored<br/>
+            If this value isn't set, <see cref="T:Trou.Services.TorProxy"/> will use your ApplicationData folder<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#CacheDirectory">Documentation here</see><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.GeoIPFile">
+            <summary>
+            Path to the geoip file (this file is used when using nodes filtering)
+            If this value isn't set, <see cref="T:Trou.Services.TorProxy"/> will try to recover it using <see cref="P:Trou.ServicesSettings.TorProxySettings.TorBundlePath"/><br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#GeoIPFile">Documentation here</see><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.GeoIPv6File">
+            <summary>
+            Path to the geoip6 file (this file is used when using nodes filtering)
+            If this value isn't set, <see cref="T:Trou.Services.TorProxy"/> will try to recover it using <see cref="P:Trou.ServicesSettings.TorProxySettings.TorBundlePath"/><br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#GeoIPv6File">Documentation here</see><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.Arguments">
+            <summary>
+            Arguments that are used when starting the <see cref="T:Trou.Services.TorProxy"/> process<br/>
+            Useful when you want to add arguments that are not natively supported by Trou<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en">List of the supported Tor arguments here</see>
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.ListeningAddress">
+            <summary>
+            Address that the <see cref="T:Trou.Services.TorProxy"/> is listening at (SOCKS 5)<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#SocksPort">Documentation here</see><br/>
+            (Default: 127.0.0.1)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.ListeningPort">
+            <summary>
+            Port that the <see cref="T:Trou.Services.TorProxy"/> is listening at (SOCKS 5)<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#SocksPort">Documentation here</see><br/>
+            (Default: 9050)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.UseController">
+            <summary>
+            Determines if <see cref="T:Trou.Services.TorProxy"/> should listen to <see cref="T:Trou.Services.TorController"/><br/>
+            (Default: true)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.ListeningControlAddress">
+            <summary>
+            Address that the <see cref="T:Trou.Services.TorProxy"/> is listening at (for the <see cref="T:Trou.Services.TorController"/>)<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#ControlPort">Documentation here</see><br/>
+            (Default: 127.0.0.1)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.ListeningControlPort">
+            <summary>
+            Port that the <see cref="T:Trou.Services.TorProxy"/> is listening at (for the <see cref="T:Trou.Services.TorController"/>)<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#ControlPort">Documentation here</see><br/>
+            (Default: 9051)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.ControlPassword">
+            <summary>
+            Password that is required for the <see cref="T:Trou.Services.TorController"/> when he wants to control the <see cref="T:Trou.Services.TorProxy"/><br/>
+            If the <see cref="P:Trou.ServicesSettings.TorProxySettings.HashedControlPassword"/> is set, <see cref="T:Trou.Services.TorProxy"/> will ignore <see cref="P:Trou.ServicesSettings.TorProxySettings.ControlPassword"/><br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#HashedControlPassword">Documentation here</see><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.HashedControlPassword">
+            <summary>
+            Password that is required for the <see cref="T:Trou.Services.TorController"/> when he wants to control the <see cref="T:Trou.Services.TorProxy"/><br/>
+            If the <see cref="P:Trou.ServicesSettings.TorProxySettings.HashedControlPassword"/> is set, <see cref="T:Trou.Services.TorProxy"/> will ignore <see cref="P:Trou.ServicesSettings.TorProxySettings.ControlPassword"/><br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#HashedControlPassword">Documentation here</see><br/>
+            (Default: null)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.StrictNodes">
+            <summary>
+            Determines if <see cref="T:Trou.Services.TorProxy"/> should strictly respect the nodes filtering<br/>
+            (Default: true)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.ExitNodes">
+            <summary>
+            List of accepted exit nodes<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#ExitNodes">Documentation here</see><br/>
+            (Default: empty)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.MiddleNodes">
+            <summary>
+            List of accepted middle nodes<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#MiddleNodes">Documentation here</see><br/>
+            (Default: empty)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.EntryNodes">
+            <summary>
+            List of accepted entry nodes<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#EntryNodes">Documentation here</see><br/>
+            (Default: empty)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.ExcludeNodes">
+            <summary>
+            List of non-accepted nodes<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#ExcludeNodes">Documentation here</see><br/>
+            (Default: empty)
+            </summary>
+        </member>
+        <member name="F:Trou.ServicesSettings.TorProxySettings.ExcludeExitNodes">
+            <summary>
+            List of non-accepted exit nodes<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#ExcludeExitNodes">Documentation here</see><br/>
+            (Default: empty)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.NoOnionTraffic">
+            <summary>
+            Determines if the <see cref="T:Trou.Services.TorProxy"/> shouldn't accept connections to .onion websites<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#NoOnionTraffic">Documentation here</see><br/>
+            (Default: false)
+            </summary>
+        </member>
+        <member name="P:Trou.ServicesSettings.TorProxySettings.OnionTrafficOnly">
+            <summary>
+            Determines if the <see cref="T:Trou.Services.TorProxy"/> should only accept connections to .onion websites<br/>
+            -> <see href="https://www.torproject.org/docs/tor-manual.html.en#OnionTrafficOnly">Documentation here</see><br/>
+            (Default: false)
+            </summary>
+        </member>
+        <member name="T:Trou.Services.PrivoxyProxy">
+            <summary>
+            Allows to start a <see cref="T:Trou.Services.PrivoxyProxy"/> which will listen to an IP and a Port for HTTP requests
+            </summary>
+        </member>
+        <member name="P:Trou.Services.PrivoxyProxy.Process">
+            <summary>
+            <see cref="T:Trou.Services.PrivoxyProxy"/> hidden process
+            </summary>
+        </member>
+        <member name="P:Trou.Services.PrivoxyProxy.PrivoxyExe">
+            <summary>
+            <see cref="T:Trou.Services.PrivoxyProxy"/> process executable path
+            </summary>
+        </member>
+        <member name="P:Trou.Services.PrivoxyProxy.Settings">
+            <summary>
+            <see cref="T:Trou.Services.PrivoxyProxy"/> settings
+            </summary>
+        </member>
+        <member name="M:Trou.Services.PrivoxyProxy.#ctor(Trou.ServicesSettings.PrivoxyProxySettings)">
+            <summary>
+            Initializes a new intance of the <see cref="T:Trou.Services.PrivoxyProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.PrivoxyProxy.RefreshArguments">
+            <summary>
+            Refreshes every Arguments and Configuration keys from the <see cref="T:Trou.ServicesSettings.PrivoxyProxySettings"/> before starting the <see cref="T:Trou.Services.PrivoxyProxy"/> process
+            </summary>
+        </member>
+        <member name="M:Trou.Services.PrivoxyProxy.Start">
+            <summary>
+            Starts the <see cref="T:Trou.Services.PrivoxyProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.PrivoxyProxy.Dispose">
+            <summary>
+            Dispose the <see cref="T:Trou.Services.PrivoxyProxy"/> service
+            </summary>
+        </member>
+        <member name="T:Trou.Services.TorController">
+            <summary>
+            Allows to start a <see cref="T:Trou.Services.TorController"/> which can interact with a <see cref="T:Trou.Services.TorProxy"/>
+            </summary>
+        </member>
+        <member name="P:Trou.Services.TorController.Settings">
+            <summary>
+            <see cref="T:Trou.Services.TorController"/> settings
+            </summary>
+        </member>
+        <member name="F:Trou.Services.TorController.ControlClient">
+            <summary>
+            <see cref="T:Trou.Services.TorController"/> tcp client
+            </summary>
+        </member>
+        <member name="F:Trou.Services.TorController.ControlWriter">
+            <summary>
+            <see cref="T:Trou.Services.TorController"/> writer
+            </summary>
+        </member>
+        <member name="F:Trou.Services.TorController.ControlReader">
+            <summary>
+            <see cref="T:Trou.Services.TorController"/> reader
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.#ctor(Trou.ServicesSettings.TorControllerSettings)">
+            <summary>
+            Initializes a new intance of the <see cref="T:Trou.Services.TorController"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.RefreshCircuit">
+            <summary>
+            Refresh the circuit of <see cref="T:Trou.Services.TorProxy"/> (changes every nodes so get new IP Address)<br/>
+            Returns true if the refresh was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Authenticate">
+            <summary>
+            Authenticates to <see cref="T:Trou.Services.TorProxy"/><br/>
+            Returns true if the authentication was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Quit">
+            <summary>
+            Quit/Log-Off from <see cref="T:Trou.Services.TorProxy"/><br/>
+            Returns true if the log-off was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Shutdown">
+            <summary>
+            Stops completely the <see cref="T:Trou.Services.TorProxy"/><br/>
+            Returns true if the shutdown was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Dormant">
+            <summary>
+            Sets <see cref="T:Trou.Services.TorProxy"/> to a "sleep mode"<br/>
+            Returns true if the sleep mode set was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Active">
+            <summary>
+            Removes the "sleep mode" (Dormant) from <see cref="T:Trou.Services.TorProxy"/>
+            Returns true if the sleep mode remove was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Send(System.String)">
+            <summary>
+            Sends a text message to <see cref="T:Trou.Services.TorProxy"/><br/>
+            Returns true if the sending was successful
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Start">
+            <summary>
+            Starts the <see cref="T:Trou.Services.TorController"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorController.Dispose">
+            <summary>
+            Dispose the <see cref="T:Trou.Services.TorController"/> service
+            </summary>
+        </member>
+        <member name="T:Trou.Services.TorProxy">
+            <summary>
+            Allows to start a <see cref="T:Trou.Services.TorProxy"/> which will listen to an IP and a Port for SOCKS 5 requests
+            </summary>
+        </member>
+        <member name="P:Trou.Services.TorProxy.Process">
+            <summary>
+            <see cref="T:Trou.Services.TorProxy"/> hidden process
+            </summary>
+        </member>
+        <member name="P:Trou.Services.TorProxy.TorExe">
+            <summary>
+            <see cref="T:Trou.Services.TorProxy"/> process executable path
+            </summary>
+        </member>
+        <member name="P:Trou.Services.TorProxy.Settings">
+            <summary>
+            <see cref="T:Trou.Services.TorProxy"/> settings
+            </summary>
+        </member>
+        <member name="E:Trou.Services.TorProxy.OnOutput">
+            <summary>
+            Triggered when <see cref="T:Trou.Services.TorProxy"/> process output informations
+            </summary>
+        </member>
+        <member name="E:Trou.Services.TorProxy.OnErrorOutput">
+            <summary>
+            Triggered when <see cref="T:Trou.Services.TorProxy"/> process output warns or errors
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.#ctor(Trou.ServicesSettings.TorProxySettings)">
+            <summary>
+            Initializes a new intance of the <see cref="T:Trou.Services.TorProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.RefreshArguments">
+            <summary>
+            Refreshes every Arguments from the <see cref="T:Trou.ServicesSettings.TorProxySettings"/> before starting the <see cref="T:Trou.Services.TorProxy"/> process
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.ForwardOutput(System.String)">
+            <summary>
+            Triggered when we receive process output that needs to be forwarded to events
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.Start">
+            <summary>
+            Starts the <see cref="T:Trou.Services.TorProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.Dispose">
+            <summary>
+            Dispose the <see cref="T:Trou.Services.TorProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.SetArgument(System.String,System.String,System.Boolean)">
+            <summary>
+            Sets an argument that can be active or not<br/>
+            (If the argument isn't active it will be removed)
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.SetToggleArgument(System.String,System.Boolean)">
+            <summary>
+            Sets a toggle argument  and remove it if the value is false
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.SetListArgument(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets an argument to a list and remove it if the list is empty
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.SetPathArgument(System.String,System.String)">
+            <summary>
+            Sets a path argument, throw an exception if the path isn't valid
+            </summary>
+        </member>
+        <member name="M:Trou.Services.TorProxy.HashPassword(System.String)">
+            <summary>
+            Hash a password using the <see cref="P:Trou.Services.TorProxy.TorExe"/> process
+            </summary>
+        </member>
+        <member name="T:Trou.Tools.ChildProcessTracker">
+            <summary>
+            Allows processes to be automatically killed if this parent process unexpectedly quits.
+            This feature requires Windows 8 or greater. On Windows 7, nothing is done.</summary>
+            <remarks>References:
+             http://stackoverflow.com/a/4657392/386091
+             http://stackoverflow.com/a/9164742/386091 </remarks>
+        </member>
+        <member name="M:Trou.Tools.ChildProcessTracker.AddProcess(System.Diagnostics.Process)">
+            <summary>
+            Add the process to be tracked. If our current process is killed, the child processes
+            that we are tracking will be automatically killed, too. If the child process terminates
+            first, that's fine, too.</summary>
+            <param name="process"></param>
+        </member>
+        <member name="T:Trou.Tools.HiddenProcess">
+            <summary>
+            Allows to start processes, they are placed in a virtual desktop in order to be hidden
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.WorkingDirectory">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> working directory
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.FileName">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> executable file path
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.Process">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> process instance
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.EndAsParent">
+            <summary>
+            Determines if the <see cref="T:Trou.Tools.HiddenProcess"/> should close when his parent process close
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.Arguments">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> arguments
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.Priority">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> priority
+            </summary>
+        </member>
+        <member name="F:Trou.Tools.HiddenProcess.ReadBufferSize">
+            <summary>
+            <see cref="T:Trou.Tools.HiddenProcess"/> read buffer size
+            </summary>
+        </member>
+        <member name="E:Trou.Tools.HiddenProcess.OnStart">
+            <summary>
+            Triggered when the process has completely started
+            </summary>
+        </member>
+        <member name="E:Trou.Tools.HiddenProcess.OnOutput">
+            <summary>
+            Triggered when the process output something
+            </summary>
+        </member>
+        <member name="M:Trou.Tools.HiddenProcess.#ctor(System.String,System.String,System.String,Trou.Tools.HiddenProcess.PriorityClass,System.Boolean)">
+            <summary>
+            Initializes a new intance of the <see cref="T:Trou.Tools.HiddenProcess"/> class
+            </summary>
+        </member>
+        <member name="M:Trou.Tools.HiddenProcess.Start">
+            <summary>
+            Starts the process, returns true if the process is started successfully
+            </summary>
+        </member>
+        <member name="M:Trou.Tools.HiddenProcess.ReadOutput(System.IntPtr)">
+            <summary>
+            Reads the process output from an handle
+            </summary>
+        </member>
+        <member name="M:Trou.Tools.HiddenProcess.Dispose">
+            <summary>
+            Kill and dispose the process
+            </summary>
+        </member>
+        <member name="T:Trou.Tools.HiddenProcess.PriorityClass">
+            <summary>
+            Process priority enumeration
+            </summary>
+        </member>
+        <member name="T:Trou.TrouProxy">
+             
+             Trou Proxy - .NET Core library made by NaolShow
+             -> https://github.com/NaolShow/Trou
+             
+             If you like the project, please star it :) (It's helping me a lot :D)
+             
+            
+            <summary>
+            Allows to start <see cref="T:Trou.Services.TorProxy"/>, <see cref="T:Trou.Services.PrivoxyProxy"/> and <see cref="T:Trou.Services.TorController"/> simultaneously
+            </summary>
+        </member>
+        <member name="F:Trou.TrouProxy.Tor">
+            <summary>
+            <see cref="T:Trou.Services.TorProxy"/> instance
+            </summary>
+        </member>
+        <member name="F:Trou.TrouProxy.Controller">
+            <summary>
+            <see cref="T:Trou.Services.TorController"/> instance
+            </summary>
+        </member>
+        <member name="F:Trou.TrouProxy.Privoxy">
+            <summary>
+            <see cref="T:Trou.Services.PrivoxyProxy"/> instance
+            </summary>
+        </member>
+        <member name="M:Trou.TrouProxy.#ctor(Trou.ServicesSettings.TorProxySettings,Trou.ServicesSettings.TorControllerSettings,Trou.ServicesSettings.PrivoxyProxySettings)">
+            <summary>
+            Initializes a new intance of the <see cref="T:Trou.Services.PrivoxyProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.TrouProxy.Start">
+            <summary>
+            Starts the <see cref="T:Trou.TrouProxy"/> service
+            </summary>
+        </member>
+        <member name="M:Trou.TrouProxy.Dispose">
+            <summary>
+            Dispose the <see cref="T:Trou.TrouProxy"/> service
+            </summary>
+        </member>
+    </members>
+</doc>
