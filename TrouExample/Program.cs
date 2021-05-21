@@ -18,11 +18,17 @@ namespace TrouExample {
             // - Instantiate Trou proxy
 
             TrouProxy proxy = new TrouProxy(new TorProxySettings() {
-                TorBundlePath = @"C:\Users\Loan\Dropbox\Developpement\CSharp\--Network\Trou\TrouExample\bin\Debug\netcoreapp3.0\Proxies\TorProxy"
+
+                // Relative or full path to the tor bundle
+                TorBundlePath = @"TorProxy"
+
             }, new TorControllerSettings() {
 
             }, new PrivoxyProxySettings() {
-                PrivoxyBundlePath = @"C:\Users\Loan\Dropbox\Developpement\CSharp\--Network\Trou\TrouExample\bin\Debug\netcoreapp3.0\Proxies\PrivoxyProxy"
+
+                // Relative or full path to the privoxy bundle
+                PrivoxyBundlePath = @"PrivoxyProxy"
+
             });
 
             // - Start

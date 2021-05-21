@@ -55,7 +55,8 @@ namespace Trou.Services {
             #region Paths
 
             // Privoxy executable path
-            PrivoxyExe = Settings.PrivoxyFile ?? Path.Combine(Settings.PrivoxyBundlePath, "privoxy.exe");
+            // => Get the full path to the privoxy executable path, else it will crash
+            PrivoxyExe = Settings.PrivoxyFile ?? Path.Combine(Path.GetFullPath(Settings.PrivoxyBundlePath), "privoxy.exe");
 
             #endregion
 
