@@ -6,17 +6,18 @@
     <Company>ToWolf</Company>
     <PackageProjectUrl>https://github.com/NaolShow/Trou</PackageProjectUrl>
     <PackageLicenseFile>README.md</PackageLicenseFile>
-    <Copyright>© 2020 NaolShow, ToWolf</Copyright>
+    <Copyright>© 2021 NaolShow, ToWolf</Copyright>
     <PackageIconUrl>https://github.com/NaolShow/Trou/blob/master/logo.png?raw=true</PackageIconUrl>
     <PackageIcon>logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/NaolShow/Trou</RepositoryUrl>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
     <PackageTags>Tor,Privoxy,HTTP,Socks,Socks5</PackageTags>
     <Description>Tor + Privoxy for the best anonymous HTTP proxy implementation on C#</Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>false</SignAssembly>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<None Include="../logo.png" Pack="true" PackagePath="\"/>
+	<None Include="../logo.png" Pack="true" PackagePath="\" />
 
     <None Include="..\README.md">
       <Pack>True</Pack>
