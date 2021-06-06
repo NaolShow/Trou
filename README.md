@@ -1,9 +1,27 @@
-# <img src="https://github.com/NaolShow/Trou/blob/master/logo.png?raw=true" width="250"/> 
+<h1 align="center">
+
+  <img src="https://github.com/NaolShow/Trou/blob/master/logo.png?raw=true" alt="Trou" width="256">
+
+</h1>
+
+<h4 align="center">« The best way to use tor and privoxy in C# »</h4>
+
+<div align="center">
+  
+  <a href="https://github.com/NaolShow/Trou/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/NaolShow/Trou?style=flat-square"></a>  
+  
+</div>
+<div align="center">
+
+  <a href="https://github.com/NaolShow/Trou/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/NaolShow/Trou?style=flat-square"></a>
+  <a href="https://github.com/NaolShow/Trou/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/NaolShow/Trou?style=flat-square"/></a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/NaolShow/Trou"/>  
+  
+</div>
+
 ---
 
 > Join **ToWolf** server to get latest news about **Trou** - https://discord.gg/m7CZ6md
-
-> Tor + Privoxy for the best anonymous HTTP proxy implementation on C#
 
 Trou is a complete Tor (and Tor Controller) and Privoxy implementation on C#
 You can use every services separately or combined to have a local anonymous proxy !
